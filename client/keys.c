@@ -751,7 +751,7 @@ void Key_Event (int key, qboolean down, unsigned time)
 	}
 
 	// update auto-repeat status
-	if (down)
+    if (down)
 	{
 		key_repeats[key]++;
 		if (key != K_BACKSPACE 

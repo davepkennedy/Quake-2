@@ -1336,8 +1336,10 @@ int R_Init( void *hinstance, void *hWnd )
 	Draw_InitLocal ();
 
 	err = qglGetError();
-	if ( err != GL_NO_ERROR )
+    if ( err != GL_NO_ERROR ) {
 		ri.Con_Printf (PRINT_ALL, "glGetError() = 0x%x\n", err);
+    }
+    return 0;
 }
 
 /*

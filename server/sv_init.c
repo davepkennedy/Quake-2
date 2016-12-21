@@ -430,8 +430,15 @@ void SV_Map (qboolean attractloop, char *levelstring, qboolean loadgame)
 		spawnpoint[0] = 0;
 
 	// skip the end-of-unit flag if necessary
-	if (level[0] == '*')
+    if (level[0] == '*') {
+#ifdef __APPLE__
+        char tmp[MAX_QPATH];
+        strcpy (tmp, level+1);
+        strcpy (level, tmp);
+#else
 		strcpy (level, level+1);
+#endif
+    }
 
 	l = strlen(level);
 	if (l > 4 && !strcmp (level+l-4, ".cin") )

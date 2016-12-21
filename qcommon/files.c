@@ -862,6 +862,9 @@ void FS_InitFilesystem (void)
 	//
 	// start up with baseq2 by default
 	//
+    // This is a temporary hack
+    FS_AddGameDirectory ("/Users/dave/Documents/Game Data/quake2/baseq2");
+    
 	FS_AddGameDirectory (va("%s/"BASEDIRNAME, fs_basedir->string) );
 
 	// any set gamedirs will be freed up to here

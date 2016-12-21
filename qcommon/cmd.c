@@ -90,8 +90,8 @@ Adds command text at the end of the buffer
 void Cbuf_AddText (char *text)
 {
 	int		l;
-	
-	l = strlen (text);
+    
+    l = strlen (text);
 
 	if (cmd_text.cursize + l >= cmd_text.maxsize)
 	{
@@ -170,6 +170,7 @@ Cbuf_ExecuteText
 */
 void Cbuf_ExecuteText (int exec_when, char *text)
 {
+    printf ("Cbuf_ExecuteText (exec_when: %d, text: %s", exec_when, text);
 	switch (exec_when)
 	{
 	case EXEC_NOW:
@@ -199,8 +200,8 @@ void Cbuf_Execute (void)
 	int		quotes;
 
 	alias_count = 0;		// don't allow infinite alias loops
-
-	while (cmd_text.cursize)
+    
+    while (cmd_text.cursize)
 	{
 // find a \n or ; line break
 		text = (char *)cmd_text.data;
@@ -233,8 +234,8 @@ void Cbuf_Execute (void)
 			memmove (text, text+i, cmd_text.cursize);
 		}
 
-// execute the command line
-		Cmd_ExecuteString (line);
+        // execute the command line
+        Cmd_ExecuteString (line);
 		
 		if (cmd_wait)
 		{
@@ -812,8 +813,8 @@ void	Cmd_ExecuteString (char *text)
 {	
 	cmd_function_t	*cmd;
 	cmdalias_t		*a;
-
-	Cmd_TokenizeString (text, true);
+    
+    Cmd_TokenizeString (text, true);
 			
 	// execute the command line
 	if (!Cmd_Argc())

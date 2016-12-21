@@ -1,3 +1,4 @@
+
 /*
 Copyright (C) 1997-2001 Id Software, Inc.
 
@@ -1220,6 +1221,7 @@ qboolean GL_Upload8 (byte *data, int width, int height,  qboolean mipmap, qboole
 
 		return GL_Upload32 (trans, width, height, mipmap);
 	}
+    return false;
 }
 
 
