@@ -101,25 +101,26 @@ void		GLimp_Shutdown( void )
 
 void GLimp_CreateGameWindow (NSRect frame, int* pwidth, int* pheight) {
     gameWindow = [[NSWindow alloc] initWithContentRect:frame
-                                             styleMask:NSWindowStyleMaskBorderless
+                                             styleMask:NSWindowStyleMaskTitled
                                                backing:NSBackingStoreRetained
                                                 defer:NO];
-    [gameWindow setTitle:@"Other Window"];
+    [gameWindow setTitle:@"Quake 2"];
     [gameWindow orderFront:nil];
     [gameWindow setAcceptsMouseMovedEvents:YES];
     
     context = GLimp_makeContext ();
     context.view = gameWindow.contentView;
     
+    /*
     NSRect backingBounds = [gameWindow convertRectToBacking:[gameWindow frame]];
     GLsizei backingPixelWidth  = (GLsizei)(backingBounds.size.width),
     backingPixelHeight = (GLsizei)(backingBounds.size.height);
-    
+    */
     *pwidth = NSWidth(frame);
     *pheight = NSHeight(frame);
-    
+    /*
     CGLError err;
-    GLint gameDimensions[2] = { NSWidth(frame), NSHeight(frame) };
+    GLint gameDimensions[2] = { NSWidth(frame) * 2, NSHeight(frame) * 2 };
     err = CGLSetParameter([context CGLContextObj], kCGLCPSurfaceBackingSize, gameDimensions);
     if (err) {
         ri.Sys_Error (ERR_FATAL, "CGLSetParameter -> %d (%s)\n", err, CGLErrorString(err));
@@ -129,17 +130,14 @@ void GLimp_CreateGameWindow (NSRect frame, int* pwidth, int* pheight) {
     if (err) {
         ri.Sys_Error (ERR_FATAL, "CGLEnable -> %d (%s)\n", err, CGLErrorString(err));
     }
-
+    */
     
     [context makeCurrentContext];
     [context update];
-    // Set viewport
-    //glViewport(0, 0, backingPixelWidth, backingPixelHeight);
-    glViewport(0, 0, frame.size.width, frame.size.height);
     
 }
 
-int     	GLimp_SetMode( int *pwidth, int *pheight, int mode, qboolean fullscreen )
+int GLimp_SetMode( int *pwidth, int *pheight, int mode, qboolean fullscreen )
 {
     int width, height, left, top;
     ri.Con_Printf(PRINT_ALL, "Creating GL Display");

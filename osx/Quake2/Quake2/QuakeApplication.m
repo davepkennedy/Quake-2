@@ -50,6 +50,9 @@ static keymap_t keymap[] = {
     {kVK_UpArrow, K_UPARROW},       {kVK_DownArrow, K_DOWNARROW},
     {kVK_LeftArrow, K_LEFTARROW},   {kVK_RightArrow, K_RIGHTARROW},
     
+    {kVK_PageUp, K_PGUP}, {kVK_PageDown, K_PGDN},
+    {kVK_Home, K_HOME}, {kVK_End, K_END},
+    
     {kVK_F1, K_F1},  {kVK_F2, K_F2},  {kVK_F3, K_F3},  {kVK_F4, K_F4},
     {kVK_F5, K_F5},  {kVK_F6, K_F6},  {kVK_F7, K_F7},  {kVK_F8, K_F8},
     {kVK_F9, K_F9},  {kVK_F10, K_F10}, {kVK_F11, K_F11}, {kVK_F12, K_F12},
@@ -120,15 +123,18 @@ static short mapKey (short keycode, BOOL shift) {
             break;
         case NSEventTypeKeyUp:
         case NSEventTypeKeyDown:
-            if (((event.modifierFlags & NSEventModifierFlagCommand) == NSEventModifierFlagCommand) ||
-                event.isARepeat)
-            {
-                [super sendEvent:event];
-            }   else {
-                [self handleKeyEvent:event];
+            if (!event.isARepeat) {
+                if ((event.modifierFlags & NSEventModifierFlagCommand) == NSEventModifierFlagCommand)
+                {
+                    [super sendEvent:event];
+                } else {
+                    [self handleKeyEvent:event];
+                }
             }
             break;
         default:
+            //NSLog(@"Event: %@", event);
+            //NSLog (@"Event Type: %d", event.type);
             [super sendEvent:event];
     }
 }
