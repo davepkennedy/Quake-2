@@ -60,6 +60,17 @@
 		55A429A61DECE4AA00018BD3 /* in_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A429A51DECE4AA00018BD3 /* in_osx.m */; };
 		55A429A81DECE50C00018BD3 /* vid_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A429A71DECE50C00018BD3 /* vid_osx.m */; };
 		55A429AC1DF0D47200018BD3 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A429AB1DF0D47200018BD3 /* CoreVideo.framework */; };
+		55A8EF481E1D972300646622 /* glimp_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF461E1D972300646622 /* glimp_osx.m */; };
+		55A8EF491E1D972300646622 /* qgl_osx.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF471E1D972300646622 /* qgl_osx.c */; };
+		55A8EF541E1D9AA500646622 /* gl_draw.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF4A1E1D9AA500646622 /* gl_draw.c */; };
+		55A8EF551E1D9AA500646622 /* gl_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF4B1E1D9AA500646622 /* gl_image.c */; };
+		55A8EF561E1D9AA500646622 /* gl_light.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF4C1E1D9AA500646622 /* gl_light.c */; };
+		55A8EF571E1D9AA500646622 /* gl_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF4D1E1D9AA500646622 /* gl_mesh.c */; };
+		55A8EF581E1D9AA500646622 /* gl_model.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF4E1E1D9AA500646622 /* gl_model.c */; };
+		55A8EF591E1D9AA500646622 /* gl_rmain.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF501E1D9AA500646622 /* gl_rmain.c */; };
+		55A8EF5A1E1D9AA500646622 /* gl_rmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF511E1D9AA500646622 /* gl_rmisc.c */; };
+		55A8EF5B1E1D9AA500646622 /* gl_rsurf.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF521E1D9AA500646622 /* gl_rsurf.c */; };
+		55A8EF5C1E1D9AA500646622 /* gl_warp.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF531E1D9AA500646622 /* gl_warp.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +152,18 @@
 		55A429A71DECE50C00018BD3 /* vid_osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vid_osx.m; sourceTree = "<group>"; };
 		55A429A91DF0D41100018BD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		55A429AB1DF0D47200018BD3 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		55A8EF461E1D972300646622 /* glimp_osx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = glimp_osx.m; path = ../../ref_gl/glimp_osx.m; sourceTree = "<group>"; };
+		55A8EF471E1D972300646622 /* qgl_osx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = qgl_osx.c; path = ../../ref_gl/qgl_osx.c; sourceTree = "<group>"; };
+		55A8EF4A1E1D9AA500646622 /* gl_draw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_draw.c; path = ../../../ref_gl/gl_draw.c; sourceTree = "<group>"; };
+		55A8EF4B1E1D9AA500646622 /* gl_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_image.c; path = ../../../ref_gl/gl_image.c; sourceTree = "<group>"; };
+		55A8EF4C1E1D9AA500646622 /* gl_light.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_light.c; path = ../../../ref_gl/gl_light.c; sourceTree = "<group>"; };
+		55A8EF4D1E1D9AA500646622 /* gl_mesh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_mesh.c; path = ../../../ref_gl/gl_mesh.c; sourceTree = "<group>"; };
+		55A8EF4E1E1D9AA500646622 /* gl_model.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_model.c; path = ../../../ref_gl/gl_model.c; sourceTree = "<group>"; };
+		55A8EF4F1E1D9AA500646622 /* gl_model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gl_model.h; path = ../../../ref_gl/gl_model.h; sourceTree = "<group>"; };
+		55A8EF501E1D9AA500646622 /* gl_rmain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_rmain.c; path = ../../../ref_gl/gl_rmain.c; sourceTree = "<group>"; };
+		55A8EF511E1D9AA500646622 /* gl_rmisc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_rmisc.c; path = ../../../ref_gl/gl_rmisc.c; sourceTree = "<group>"; };
+		55A8EF521E1D9AA500646622 /* gl_rsurf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_rsurf.c; path = ../../../ref_gl/gl_rsurf.c; sourceTree = "<group>"; };
+		55A8EF531E1D9AA500646622 /* gl_warp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_warp.c; path = ../../../ref_gl/gl_warp.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +200,7 @@
 		55A4291B1DEB7CD500018BD3 /* Quake2 */ = {
 			isa = PBXGroup;
 			children = (
+				55A8EF451E1D965E00646622 /* ref_gl */,
 				55A429461DEB808700018BD3 /* application */,
 				55A4291C1DEB7CD500018BD3 /* QuakeDelegate.h */,
 				55A4291D1DEB7CD500018BD3 /* QuakeDelegate.m */,
@@ -313,6 +337,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		55A8EF451E1D965E00646622 /* ref_gl */ = {
+			isa = PBXGroup;
+			children = (
+				55A8EF4A1E1D9AA500646622 /* gl_draw.c */,
+				55A8EF4B1E1D9AA500646622 /* gl_image.c */,
+				55A8EF4C1E1D9AA500646622 /* gl_light.c */,
+				55A8EF4D1E1D9AA500646622 /* gl_mesh.c */,
+				55A8EF4E1E1D9AA500646622 /* gl_model.c */,
+				55A8EF4F1E1D9AA500646622 /* gl_model.h */,
+				55A8EF501E1D9AA500646622 /* gl_rmain.c */,
+				55A8EF511E1D9AA500646622 /* gl_rmisc.c */,
+				55A8EF521E1D9AA500646622 /* gl_rsurf.c */,
+				55A8EF531E1D9AA500646622 /* gl_warp.c */,
+				55A8EF461E1D972300646622 /* glimp_osx.m */,
+				55A8EF471E1D972300646622 /* qgl_osx.c */,
+			);
+			name = ref_gl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -392,6 +435,7 @@
 				55A4297E1DEB827300018BD3 /* sv_ents.c in Sources */,
 				55A429991DECD11F00018BD3 /* net_osx.c in Sources */,
 				55A4293F1DEB806900018BD3 /* crc.c in Sources */,
+				55A8EF5C1E1D9AA500646622 /* gl_warp.c in Sources */,
 				55A4293D1DEB806900018BD3 /* cmodel.c in Sources */,
 				55A429A61DECE4AA00018BD3 /* in_osx.m in Sources */,
 				55A429A41DECE44C00018BD3 /* snddma_osx.m in Sources */,
@@ -399,15 +443,21 @@
 				55A4296B1DEB821000018BD3 /* cl_parse.c in Sources */,
 				55A429441DEB806900018BD3 /* pmove.c in Sources */,
 				55A429411DEB806900018BD3 /* files.c in Sources */,
+				55A8EF561E1D9AA500646622 /* gl_light.c in Sources */,
+				55A8EF541E1D9AA500646622 /* gl_draw.c in Sources */,
+				55A8EF491E1D972300646622 /* qgl_osx.c in Sources */,
 				55A4298C1DEB82CF00018BD3 /* snd_mix.c in Sources */,
 				55A429A81DECE50C00018BD3 /* vid_osx.m in Sources */,
 				55A4296A1DEB821000018BD3 /* cl_newfx.c in Sources */,
+				55A8EF481E1D972300646622 /* glimp_osx.m in Sources */,
 				55A429661DEB821000018BD3 /* cl_fx.c in Sources */,
 				55A429401DEB806900018BD3 /* cvar.c in Sources */,
 				55A429211DEB7CD500018BD3 /* main.m in Sources */,
+				55A8EF5B1E1D9AA500646622 /* gl_rsurf.c in Sources */,
 				55A429711DEB821000018BD3 /* keys.c in Sources */,
 				55A429691DEB821000018BD3 /* cl_main.c in Sources */,
 				55A429671DEB821000018BD3 /* cl_input.c in Sources */,
+				55A8EF591E1D9AA500646622 /* gl_rmain.c in Sources */,
 				55A429831DEB827300018BD3 /* sv_user.c in Sources */,
 				55A429651DEB821000018BD3 /* cl_ents.c in Sources */,
 				55A4291E1DEB7CD500018BD3 /* QuakeDelegate.m in Sources */,
@@ -419,16 +469,20 @@
 				55A429801DEB827300018BD3 /* sv_init.c in Sources */,
 				55A4298B1DEB82CF00018BD3 /* snd_mem.c in Sources */,
 				55A429701DEB821000018BD3 /* console.c in Sources */,
+				55A8EF571E1D9AA500646622 /* gl_mesh.c in Sources */,
 				55A4297F1DEB827300018BD3 /* sv_game.c in Sources */,
 				55A429841DEB827300018BD3 /* sv_world.c in Sources */,
 				55A4296C1DEB821000018BD3 /* cl_pred.c in Sources */,
 				55A4298A1DEB82CF00018BD3 /* snd_dma.c in Sources */,
 				55A4293C1DEB806900018BD3 /* cmd.c in Sources */,
+				55A8EF5A1E1D9AA500646622 /* gl_rmisc.c in Sources */,
 				55A429681DEB821000018BD3 /* cl_inv.c in Sources */,
 				55A4292F1DEB7D1B00018BD3 /* QuakeApplication.m in Sources */,
 				55A429911DECCDE700018BD3 /* cd_osx.m in Sources */,
+				55A8EF581E1D9AA500646622 /* gl_model.c in Sources */,
 				55A429821DEB827300018BD3 /* sv_send.c in Sources */,
 				55A429421DEB806900018BD3 /* md4.c in Sources */,
+				55A8EF551E1D9AA500646622 /* gl_image.c in Sources */,
 				55A429431DEB806900018BD3 /* net_chan.c in Sources */,
 				55A429721DEB821000018BD3 /* menu.c in Sources */,
 				55A429A01DECD5DE00018BD3 /* q_shosx.c in Sources */,
@@ -548,6 +602,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 					C_ONLY,
+					REF_HARD_LINKED,
 				);
 				INFOPLIST_FILE = Quake2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -564,7 +619,10 @@
 				CLANG_ENABLE_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 28XBFA9EQ7;
-				GCC_PREPROCESSOR_DEFINITIONS = C_ONLY;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					C_ONLY,
+					REF_HARD_LINKED,
+				);
 				INFOPLIST_FILE = Quake2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.davepkennedy.Quake2;

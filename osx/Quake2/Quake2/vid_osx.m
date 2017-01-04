@@ -20,7 +20,11 @@ viddef_t	viddef;				// global video state
 
 refexport_t	re;
 
+#ifdef REF_HARD_LINKED
+refexport_t GetRefAPI (refimport_t rimp);
+#else
 typedef refexport_t (*GetRefAPI_t) (refimport_t rimp);
+#endif
 
 /*
  ==========================================================================
@@ -137,13 +141,17 @@ void	VID_Init (void)
     ri.Vid_MenuInit = VID_MenuInit;
     
     
-    
+#ifdef REF_HARD_LINKED
+    re = GetRefAPI(ri);
+#else
     loadRenderer ();
     GetRefAPI_t GetRefAPI = dlsym(rendererHandle, "GetRefAPI");
     re = GetRefAPI(ri);
     
-    if (re.api_version != API_VERSION)
+    if (re.api_version != API_VERSION) {
         Com_Error (ERR_FATAL, "Re has incompatible api_version");
+    }
+#endif
     
     // call the init function
     
@@ -156,10 +164,12 @@ void	VID_Shutdown (void)
     if (re.Shutdown)
         re.Shutdown ();
     
+#ifndef REF_HARD_LINKED
     if (rendererHandle) {
         dlclose (rendererHandle);
         rendererHandle = NULL;
     }
+#endif
 }
 
 void	VID_CheckChanges (void)
