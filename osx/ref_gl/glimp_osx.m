@@ -20,10 +20,11 @@
 
 #include "../../ref_gl/gl_local.h"
 #import <Cocoa/Cocoa.h>
+#import "../Quake2/Quake2/GameWindow.h"
 
 NSOpenGLContext* context = NULL;
 NSWindow* mainWindow = NULL;
-NSWindow* gameWindow = NULL;
+GameWindow* gameWindow = NULL;
 
 static NSOpenGLPixelFormat* GLimp_pixelFormat () {
     NSOpenGLPixelFormatAttribute attribs[] =
@@ -74,23 +75,27 @@ static NSOpenGLContext* GLimp_makeContext () {
 void		GLimp_BeginFrame( float camera_separation )
 {
     [context makeCurrentContext];
-    CGLLockContext([context CGLContextObj]);
+    // CGLLockContext([context CGLContextObj]);
 }
 
 void		GLimp_EndFrame( void )
 {
     CGLFlushDrawable([context CGLContextObj]);
-    CGLUnlockContext([context CGLContextObj]);
+    // CGLUnlockContext([context CGLContextObj]);
+    [gameWindow centerMouse];
 }
 
 int 		GLimp_Init( void *hinstance, void *hWnd )
 {
     mainWindow = (__bridge NSWindow*) hWnd;
-    /*
-    context = GLimp_makeContext();
-    context.view = window.contentView;
-    [context makeCurrentContext];
-     */
+    
+    /**
+    if (!context) {
+        context = GLimp_makeContext();
+        context.view = mainWindow.contentView;
+        [context makeCurrentContext];
+    }
+    /**/
     
     return true;
 }
@@ -100,7 +105,7 @@ void		GLimp_Shutdown( void )
 }
 
 void GLimp_CreateGameWindow (NSRect frame, int* pwidth, int* pheight) {
-    gameWindow = [[NSWindow alloc] initWithContentRect:frame
+    gameWindow = [[GameWindow alloc] initWithContentRect:frame
                                              styleMask:NSWindowStyleMaskTitled
                                                backing:NSBackingStoreRetained
                                                 defer:NO];

@@ -14,6 +14,7 @@
 }
 
 - (void) handleKey:(short) key isDown:(BOOL) down;
+- (NSWindow*) window;
 
 @end
 

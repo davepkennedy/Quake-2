@@ -70,6 +70,7 @@ void	*Sys_GetGameAPI (void *parms)
     }
     else
     {
+        NSLog (@"Sys_GetGameAPI failed (1) %s", dlerror());
         // now run through the search paths
         path = NULL;
         while (1)

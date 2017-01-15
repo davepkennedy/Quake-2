@@ -71,6 +71,7 @@
 		55A8EF5A1E1D9AA500646622 /* gl_rmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF511E1D9AA500646622 /* gl_rmisc.c */; };
 		55A8EF5B1E1D9AA500646622 /* gl_rsurf.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF521E1D9AA500646622 /* gl_rsurf.c */; };
 		55A8EF5C1E1D9AA500646622 /* gl_warp.c in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EF531E1D9AA500646622 /* gl_warp.c */; };
+		55A8EFC11E26E1C000646622 /* GameWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A8EFC01E26E1C000646622 /* GameWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +165,8 @@
 		55A8EF511E1D9AA500646622 /* gl_rmisc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_rmisc.c; path = ../../../ref_gl/gl_rmisc.c; sourceTree = "<group>"; };
 		55A8EF521E1D9AA500646622 /* gl_rsurf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_rsurf.c; path = ../../../ref_gl/gl_rsurf.c; sourceTree = "<group>"; };
 		55A8EF531E1D9AA500646622 /* gl_warp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gl_warp.c; path = ../../../ref_gl/gl_warp.c; sourceTree = "<group>"; };
+		55A8EFBF1E26E1C000646622 /* GameWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWindow.h; sourceTree = "<group>"; };
+		55A8EFC01E26E1C000646622 /* GameWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,8 @@
 				55A429A31DECE44C00018BD3 /* snddma_osx.m */,
 				55A429A51DECE4AA00018BD3 /* in_osx.m */,
 				55A429A71DECE50C00018BD3 /* vid_osx.m */,
+				55A8EFBF1E26E1C000646622 /* GameWindow.h */,
+				55A8EFC01E26E1C000646622 /* GameWindow.m */,
 			);
 			path = Quake2;
 			sourceTree = "<group>";
@@ -382,7 +387,7 @@
 		55A429111DEB7CD500018BD3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Dave Kennedy";
 				TargetAttributes = {
 					55A429181DEB7CD500018BD3 = {
@@ -456,6 +461,7 @@
 				55A8EF5B1E1D9AA500646622 /* gl_rsurf.c in Sources */,
 				55A429711DEB821000018BD3 /* keys.c in Sources */,
 				55A429691DEB821000018BD3 /* cl_main.c in Sources */,
+				55A8EFC11E26E1C000646622 /* GameWindow.m in Sources */,
 				55A429671DEB821000018BD3 /* cl_input.c in Sources */,
 				55A8EF591E1D9AA500646622 /* gl_rmain.c in Sources */,
 				55A429831DEB827300018BD3 /* sv_user.c in Sources */,
@@ -521,6 +527,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -568,6 +575,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -593,7 +601,6 @@
 		55A4292B1DEB7CD500018BD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -614,7 +621,6 @@
 		55A4292C1DEB7CD500018BD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = NO;
 				COMBINE_HIDPI_IMAGES = YES;

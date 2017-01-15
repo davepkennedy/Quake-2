@@ -187,11 +187,11 @@ void IN_Activate (qboolean active)
 void IN_ActivateMouse (void)
 {
     mouseactive = true;
-    // CGDisplayHideCursor(kCGDirectMainDisplay);
+    CGDisplayHideCursor(kCGDirectMainDisplay);
 }
 
 void IN_DeactivateMouse (void)
 {
     mouseactive = false;
-    // CGDisplayShowCursor(kCGDirectMainDisplay);
+    CGDisplayShowCursor(kCGDirectMainDisplay);
 }
