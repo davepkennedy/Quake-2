@@ -10,11 +10,9 @@
 
 @interface QuakeDelegate : NSObject <NSApplicationDelegate>  {
     CVDisplayLinkRef displayLink;
-    NSWindow* _window;
 }
 
 - (void) handleKey:(short) key isDown:(BOOL) down;
-- (NSWindow*) window;
 
 @end
 

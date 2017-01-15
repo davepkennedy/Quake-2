@@ -128,20 +128,12 @@ char *Sys_GetClipboardData( void )
 
 int		Sys_Milliseconds (void)
 {
-    struct timeval tp;
-    struct timezone tzp;
-    static int		secbase;
-    
-    gettimeofday(&tp, &tzp);
-    
-    if (!secbase)
-    {
-        secbase = tp.tv_sec;
-        return tp.tv_usec/1000;
-    }
-    
-    curtime = (tp.tv_sec - secbase)*1000 + tp.tv_usec/1000;
-    
+    static CFAbsoluteTime baseTime;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        baseTime = CFAbsoluteTimeGetCurrent();
+    });
+    curtime = (CFAbsoluteTimeGetCurrent() - baseTime) * 1000.0f;
     return curtime;
 }
 

@@ -75,28 +75,18 @@ static NSOpenGLContext* GLimp_makeContext () {
 void		GLimp_BeginFrame( float camera_separation )
 {
     [context makeCurrentContext];
-    // CGLLockContext([context CGLContextObj]);
+    CGLLockContext([context CGLContextObj]);
 }
 
 void		GLimp_EndFrame( void )
 {
     CGLFlushDrawable([context CGLContextObj]);
-    // CGLUnlockContext([context CGLContextObj]);
+    CGLUnlockContext([context CGLContextObj]);
     [gameWindow centerMouse];
 }
 
 int 		GLimp_Init( void *hinstance, void *hWnd )
 {
-    mainWindow = (__bridge NSWindow*) hWnd;
-    
-    /**
-    if (!context) {
-        context = GLimp_makeContext();
-        context.view = mainWindow.contentView;
-        [context makeCurrentContext];
-    }
-    /**/
-    
     return true;
 }
 
@@ -116,26 +106,8 @@ void GLimp_CreateGameWindow (NSRect frame, int* pwidth, int* pheight) {
     context = GLimp_makeContext ();
     context.view = gameWindow.contentView;
     
-    /*
-    NSRect backingBounds = [gameWindow convertRectToBacking:[gameWindow frame]];
-    GLsizei backingPixelWidth  = (GLsizei)(backingBounds.size.width),
-    backingPixelHeight = (GLsizei)(backingBounds.size.height);
-    */
     *pwidth = NSWidth(frame);
     *pheight = NSHeight(frame);
-    /*
-    CGLError err;
-    GLint gameDimensions[2] = { NSWidth(frame) * 2, NSHeight(frame) * 2 };
-    err = CGLSetParameter([context CGLContextObj], kCGLCPSurfaceBackingSize, gameDimensions);
-    if (err) {
-        ri.Sys_Error (ERR_FATAL, "CGLSetParameter -> %d (%s)\n", err, CGLErrorString(err));
-    }
-    
-    err = CGLEnable([context CGLContextObj], kCGLCESurfaceBackingSize);
-    if (err) {
-        ri.Sys_Error (ERR_FATAL, "CGLEnable -> %d (%s)\n", err, CGLErrorString(err));
-    }
-    */
     
     [context makeCurrentContext];
     [context update];

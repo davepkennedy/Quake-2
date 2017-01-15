@@ -11,21 +11,11 @@
 
 @interface QuakeDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
-
 @end
 
 @implementation QuakeDelegate
 
 // static CVDisplayLinkRef displayLink;
-
-- (void) setWindow:(NSWindow *)window {
-    _window = window;
-}
-
-- (NSWindow*) window {
-    return _window;
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
@@ -70,7 +60,6 @@
 }
 
 - (void) awakeFromNib {
-    NSLog (@"Window: %@", self.window);
     [self initializeGame];
     [self runDisplay];
 }

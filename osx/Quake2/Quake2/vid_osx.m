@@ -146,11 +146,6 @@ static void loadRenderer () {
 }
 #endif
 
-NSWindow* getMainWindow () {
-    QuakeDelegate* delegate = [NSApplication sharedApplication].delegate;
-    return [delegate window];
-}
-
 void	VID_Init (void)
 {
     refimport_t	ri;
@@ -191,7 +186,7 @@ void	VID_Init (void)
     
     // call the init function
     
-    if (re.Init (NULL, (__bridge void *)getMainWindow()) == -1)
+    if (re.Init (NULL, NULL) == -1)
         Com_Error (ERR_FATAL, "Couldn't start refresh");
 }
 
